@@ -1,0 +1,32 @@
+# Весь код
+
+import pandas as pd
+import numpy as np
+data = open('/content/drive/MyDrive/Лабы_ТОБД_файлы/Уэллс_-_Война_миров.txt', 'r', encoding = '1251')
+words = {}
+stroki = 0
+slova = 0
+simb = 0
+for line in data:
+  stroki += 1
+  s = list(filter(None, re.split(";|,|\n|!|\?|-|\.| |–\xa0|–|[0-9]|«|»|\(|\)|\[|\]", line)))
+  for w in s:
+    slova += len(s)
+    simb += sum([len(k) for k in s])
+    if w not in words:
+      words[w.lower()] = 1
+    else:
+      words[w.lower()] += 1
+
+w_pd = pd.DataFrame({'Слова': words.keys(), 'Кол-во': words.values()})
+gist = w_pd.sort_values(by='Кол-во')[-20:]
+gist.loc[433]['Слова'] # Выводит одно пустое значение. Смотрю что это и удаляю.   '\xa0'
+w_pd = w_pd.drop(433, axis = 0)
+gist = w_pd.sort_values(by='Кол-во')[-20:]
+
+import seaborn as sns
+pic = sns.barplot(x=gist['Слова'], y=gist['Кол-во'])
+pic.set_xticklabels(labels=gist['Слова'], rotation=90)
+pic
+
+print(f'Сводка:\nСтроки : {stroki}\nСлова : {slova}\nСимволы : {simb}')
