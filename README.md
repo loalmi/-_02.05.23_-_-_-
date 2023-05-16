@@ -8,3 +8,10 @@
 #1. Вывод:
 гистограмма и сводка:\
 ![image](https://user-images.githubusercontent.com/114482797/235775836-0bb82b57-608b-4b8e-9f6e-482efb70bc26.png)
+
+#3. Вывод:
+
+![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/41dc498f-295a-4af6-b1d2-e1752bad29f4)
+![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/eb37c813-bccc-425d-8daf-355f6ceb53fb)
+![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/a9fbb7dc-0110-43c8-ba14-36736753d8de)
+
