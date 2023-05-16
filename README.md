@@ -15,3 +15,6 @@
 ![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/eb37c813-bccc-425d-8daf-355f6ceb53fb)
 ![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/a9fbb7dc-0110-43c8-ba14-36736753d8de)
 
+#2. Вывод:
+
+![image](https://github.com/loalmi/-_02.05.23_-_-_-/assets/114482797/f880e762-7b04-4e5c-8552-13c55731b819)
