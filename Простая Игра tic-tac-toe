@@ -1,0 +1,66 @@
+board = list(range(1,10))
+
+def space(board):
+   print("-" * 13)
+   for i in range(3):
+      print("|", board[0+i*3], "|", board[1+i*3], "|", board[2+i*3], "|")
+      print("-" * 13)
+
+def vvod(krestik_or_nolik):
+    b=False
+    while not b:
+      vybor_igroka = input("Выберите позицию " + krestik_or_nolik)
+      try:
+         vybor_igroka = int(vybor_igroka)
+      except:
+         print("Некорректный ввод.")
+         continue
+      if vybor_igroka >= 1 and vybor_igroka <= 9:
+         if(str(board[vybor_igroka-1]) not in "XO"):
+            board[vybor_igroka-1] = krestik_or_nolik
+            b = True
+         else:
+            print("Эта клетка уже занята.")
+      else:
+        print("Некорректный ввод.")
+
+def proverka(board):
+   mesto_vyigr = ((0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6))
+   for each in mesto_vyigr:
+       if board[each[0]] == board[each[1]] == board[each[2]]:
+          return board[each[0]]
+   return False
+
+def main(board):
+    kol = 0
+    win = False
+    while not win:
+        space(board)
+        if kol % 2 == 0:
+           vvod("X")
+        else:
+           vvod("O")
+        kol += 1
+        if kol > 4:
+           a = proverka(board)
+           if a:
+              print(a, "победил")
+              win = True
+              break
+        if kol == 9:
+            print("Ничья")
+            break
+    space(board)
+main(board)
+
+
+
+# Вывод:
+# Выберите позицию O3
+#-------------
+#| X | O | O |
+#-------------
+#| 4 | X | 6 |
+#-------------
+#| 7 | 8 | 9 |
+#-------------
